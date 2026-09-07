@@ -1,0 +1,9 @@
+# Render 部署蓝图：在 render.com 创建 Web Service 时选择本仓库即可自动识别
+services:
+  - type: web
+    name: swing-universe
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/photos
