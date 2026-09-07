@@ -14,7 +14,8 @@ import { dirname, join, extname } from 'node:path'
 import { existsSync, readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const DATA_FILE = join(__dirname, 'data.json')
+// 数据文件路径支持环境变量覆盖（持久化存储挂载时设为卷内路径，如 /app/data/data.json）
+const DATA_FILE = process.env.DATA_FILE || join(__dirname, 'data.json')
 const DIST_DIR = join(__dirname, '..', 'dist')
 const PHOTOS_DIR = join(__dirname, '..', 'photos')
 const PORT = process.env.PORT || 3001
