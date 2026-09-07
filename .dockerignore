@@ -1,0 +1,8 @@
+node_modules
+dist
+.git
+dist-export.zip
+扬亨的秋千宇宙.html
+*.log
+.vscode
+.github
